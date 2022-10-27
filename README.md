@@ -1,2 +1,3 @@
 # Yogo_SeleniumPage
-Start within CL: "npm run test"
+Start within CL: "npm run test"<br />
+Side address: http://automationpractice.com/index.php?id_category=3&controller=category
