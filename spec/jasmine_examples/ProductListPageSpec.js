@@ -25,11 +25,11 @@ describe("Verify product Listing Page", function() {
         await ListingPage.driver.sleep(3000)
     });
 
-    xit("verify Color", async function() {
+    it("verify Color", async function() {
         const {until, By} = require('selenium-webdriver');
-        await ListingPage.selectColor('White')
+        await ListingPage.selectColor('White', 'Black')
         await ListingPage.driver.wait(until.elementLocated(By.id(`enabled_filters`)), 20000);
-        let variableForCheck = await ListingPage.allProductsHaveColor_v2('white')
+        let variableForCheck = await ListingPage.allProductsHaveColor_v2('white', 'black')
         expect(variableForCheck).toBe(true)
     });
 
@@ -38,7 +38,7 @@ describe("Verify product Listing Page", function() {
         await ListingPage.driver.sleep(10000)
     });
 
-    it("verify sort by", async function() {
+    xit("verify sort by(Slider)", async function() {
         await ListingPage.sortByText('Price: Lowest first')
         await ListingPage.driver.sleep(10000)
     });
