@@ -1,0 +1,17 @@
+{
+  "name": "d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.5.0"
+  },
+  "devDependencies": {
+    "jasmine": "^4.4.0"
+  }
+}
