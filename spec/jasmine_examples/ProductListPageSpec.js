@@ -1,4 +1,5 @@
 const ListingPage = require('../../lib/pom/productListing.page')
+const myAssert = require('../../lib/helpers/myAssertions')
 
 describe("Verify product Listing Page", function() {
     
@@ -14,18 +15,23 @@ describe("Verify product Listing Page", function() {
         await ListingPage.driver.close()
     })
 
+
+
+
     xit("with a displaying banner", async function() {
         let answer = await (await ListingPage.getBannerText()).getText()
         console.log(answer)
         expect(answer).toBe('Women')
     });
 
-    xit("verify Size", async function() {
+    it("verify Size(iFrame)", async function() {  //iFrame, scroll, executeScript
         await (await ListingPage.selectSize('S')).click()
-        await ListingPage.driver.sleep(3000)
+        await ListingPage.driver.sleep(15000)
+        let answer = await myAssert.checkSizes('S')
+        expect(answer).toBe(true)
     });
 
-    it("verify Color", async function() {
+    xit("verify Color", async function() {
         const {until, By} = require('selenium-webdriver');
         await ListingPage.selectColor('White', 'Black')
         await ListingPage.driver.wait(until.elementLocated(By.id(`enabled_filters`)), 20000);
